@@ -9,3 +9,5 @@ const Captured = (props) => {
     </div>
   )
 }
+
+export default Captured;
