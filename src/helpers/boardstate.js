@@ -4,8 +4,9 @@
 const startBoardState = (height, width) => {
   let board = createEmptyBoard(width, height);
   board = addPieces(board, width, height);
+  board = colorBoard(board, width, height);
   return board;
-}
+};
 
 const createEmptyBoard = (width, height) => {
   let board = [];
@@ -19,11 +20,12 @@ const createEmptyBoard = (width, height) => {
         piece: null,
         side: null,
         isChosen: false,
+        shade: null,
       }
     }
   }
   return board;
-}
+};
 
 const addPieces = (board, width, height) => {
   // Assuming standard layout for now
@@ -75,8 +77,26 @@ const addPieces = (board, width, height) => {
   updatedBoard[7][7].side = 'black';
 
   return updatedBoard;
-}
+};
+
+colorBoard = (board, width, height) => {
+  let updatedBoard = [...board];
+  for (let x = 0; x < width; x++) {
+    for (let y = 0; y < height; y++) {
+      if (isOdd(x) && isOdd(y)) {
+        board[x][y].shade = 'dark';
+      } else {
+        board[x][y].shade = 'light';
+      }
+    }
+  }
+  return updatedBoard;
+};
+
+const isOdd = (number) => {
+  return number % 2 !== 0;
+};
 
 export {
   startBoardState
-}
+};
