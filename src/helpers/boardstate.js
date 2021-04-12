@@ -76,3 +76,7 @@ const addPieces = (board, width, height) => {
 
   return updatedBoard;
 }
+
+export {
+  startBoardState
+}
