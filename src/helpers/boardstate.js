@@ -79,7 +79,7 @@ const addPieces = (board, width, height) => {
   return updatedBoard;
 };
 
-colorBoard = (board, width, height) => {
+const colorBoard = (board, width, height) => {
   let updatedBoard = [...board];
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {

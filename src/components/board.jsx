@@ -1,4 +1,5 @@
-import Square from './square';
+import React from 'react';
+import Square from './square.jsx';
 import startBoardState from '../helpers/boardstate';
 import { useState } from 'react';
 

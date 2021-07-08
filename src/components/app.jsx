@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Board from './board';
-import Captured from './captured';
+import Board from './board.jsx';
+import Captured from './captured.jsx';
 
 const App = (props) => {
 
