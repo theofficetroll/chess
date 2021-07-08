@@ -83,10 +83,10 @@ colorBoard = (board, width, height) => {
   let updatedBoard = [...board];
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
-      if (isOdd(x) && isOdd(y)) {
-        board[x][y].shade = 'dark';
-      } else {
+      if ((isOdd(x) && isOdd(y)) || (!isOdd(x) && !isOdd(y))) {
         board[x][y].shade = 'light';
+      } else {
+        board[x][y].shade = 'dark';
       }
     }
   }
