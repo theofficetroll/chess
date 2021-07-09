@@ -31,7 +31,11 @@ const Board = () => {
 
 
     <div className="board">
-      {renderBoard(board)}
+      <div className='game-data'>
+        <div className='data'>
+          {renderBoard(board)}
+        </div>
+      </div>
     </div>
   )
 }

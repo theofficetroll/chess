@@ -6,7 +6,7 @@ const App = () => {
 
 
   return(
-    <div className="container">
+    <div className="game">
       <Board />
       <Captured />
     </div>
