@@ -36,3 +36,9 @@ body {
   clear: both;
   content: ''
 }
+.white {
+  color: green;
+}
+.black {
+  color: black;
+}
