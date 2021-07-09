@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Square = (props) => {
+const Square = ({ value, onClick, cMenu }) => {
 
+  let className = 'square ' + value.shade;
 
   return(
-    <div className="square">
-      WIP
+    <div className={className} onClick={onClick} onContextMenu={cMenu} >
+      {value.piece || "_"}
     </div>
   )
 }
