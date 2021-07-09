@@ -1,18 +1,37 @@
 import React from 'react';
 import Square from './square.jsx';
-import startBoardState from '../helpers/boardstate';
+import { startBoardState } from '../helpers/boardstate';
 import { useState } from 'react';
 
-const Board = (props) => {
-  const [ board, setBoard ] = useState([]);
+const Board = () => {
+  const [ board, setBoard ] = useState(startBoardState(8, 8));
 
-  if (!board) {
-    setBoard(startBoardState)(this.props.height, this.props.width);
+  let handleClick = (x, y) => {
+    // Placeholder
   };
 
+  let handleContextMenu = (x, y) => {
+    // Placeholder
+  };
+
+  let renderBoard = (board) => {
+    return board.map(boardRow => {
+      return boardRow.map(boardSquare => {
+        return (
+          <div key={boardSquare.x * 10 + boardSquare.y}>
+            <Square onClick={() => handleClick(boardSquare.x, boardSquare.y)} cMenu={(e) => handleContextMenu(e, boardSquare.x, boardSquare.y)} value={boardSquare}/>
+            {(boardRow[boardRow.length - 1] === boardSquare) ? <div className="clear" /> : ''}
+          </div>
+        )
+      })
+    })
+  }
+
   return(
+
+
     <div className="board">
-      <Square />
+      {renderBoard(board)}
     </div>
   )
 }
